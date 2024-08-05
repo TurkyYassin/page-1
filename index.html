@@ -104,7 +104,7 @@
      <!-- Right Sec Start -->
     <div class="w-10/12 mb-8">
         <!-- Bar Start -->
-        <div class=" flex justify-between items-center p-4 bg-white sticky top-0 z-50">
+        <div class=" flex justify-between items-center p-4 bg-white sticky top-0 z-50 border-b-2">
             <div class="flex items-center">
                 <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16.8 11.1a5.7 5.7 0 10-11.4 0 5.7 5.7 0 0011.4 0z"></path></svg>
                 <input class="ml-2 p-2 w-24 border-none focus:outline-none" type="text" placeholder="Search">
@@ -134,20 +134,20 @@
                 <div class=" px-4 flex justify-start items-center mb-1 border-b pb-2 ">
                     <div><button class="px-4 h-20 mr-12 border-2 hover:bg-blue-500 hover:text-white transition-all text-black rounded text-sm font-sans   text-gray-500">All 12345</button></div>
                     <div>
-                        <div>                    
+                      <div>                    
                             <button class="w-32 h-9 my-2 bg-blue-200 text-blue-600 rounded text-sm font-sans   text-gray-500">New Leads 123</button>
                             <button class="w-32 h-9 my-2 ml-6 bg-orange-100 text-orange-300 rounded text-sm font-sans   text-gray-500">Follow Up 1234</button>
                             <button class="w-32 h-9 my-2 ml-6 bg-blue-100 text-blue-900 rounded text-sm font-sans   text-gray-500">Trials 12</button>
                             <button class="w-32 h-9 my-2 ml-6 bg-red-200 text-red-800 rounded text-sm font-sans   text-gray-500">Suspended 1234</button>
                             <button class="w-32 h-9 my-2 ml-44 bg-red-500 text-white rounded text-sm font-sans   text-gray-500">Schedule Calls</button>
-                    </div>
-                    <div>
+                      </div>
+                      <div>
                             <button class="w-32 h-9 mb-1 bg-gray-300 text-black rounded text-sm font-sans text-gray-500">No Answer 1234</button>
                             <button class="w-32 h-9 mb-1 ml-6 bg-green-200 text-green-600 rounded text-sm font-sans text-gray-500">Intersted 123</button>
                             <button class="w-32 h-9 mb-1 ml-6 bg-green-200 text-green-600 rounded text-sm font-sans text-gray-500">Student 12345</button>
                             <button class="w-32 h-9 mb-1 ml-6 bg-red-300 text-red-900 rounded text-sm font-sans text-gray-500">Not Intersted 1234</button>
                             <button class="w-32 h-9 mb-1 ml-44 bg-blue-500 text-white rounded text-sm font-sans text-gray-500">Add Leads</button>
-                    </div>
+                      </div>
                     </div>
                 </div>
             
@@ -157,12 +157,65 @@
                     <button class="px-4 my-2 h-9 mr-16 border transition-all hover:bg-blue-600 hover:text-white rounded rounded text-sm font-sans text-gray-500">Select Agent</button>
                     <button class="px-4 my-2 h-9 mr-16 border transition-all hover:bg-blue-600 hover:text-white rounded rounded text-sm font-sans text-gray-500">Select Sources</button>
                     <input type="text" placeholder="Search..." class="px-4 my-2 h-9 border rounded text-sm font-sans   text-gray-500">
+                    <div class="relative inline-block ml-16">
+                      <button onclick="toggleDropdown()" class="my-2 inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-blue-500 text-xl font-medium hover:bg-gray-50 transition-all focus:outline-none">
+                          <i class="fa-solid fa-gear"></i>
+                          <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
+                        </svg>
+                      </button>
+                    
+                      <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                          <div class="flex items-center">
+                            <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                            <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
+                          </div>
+                          <div class="flex items-center">
+                            <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                            <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
+                            </div>
+                            <div class="flex items-center">
+                              <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                              <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
+                            </div>
+                          <!-- Add more options as needed -->
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
 
             <div class="container mx-auto ">
                 <div class="overflow-x-auto bg-white shadow-md rounded-lg">
-                    <table class="min-w-full leading-normal">
+                    <table class="w-full leading-normal">
                         <thead>
                             <tr>
                                 <th class="h-4 w-4 rounded px-5 py-1 border-b border-gray-200 text-left text-gray-200 uppercase tracking-wider"><input type="checkbox"></th>
@@ -176,14 +229,68 @@
                                 <th class="px-5 py-5 border-b border-gray-200 text-center text-gray-600 text-sm font-sans font-medium">Reminder Calls</th>
                                 <th class="px-5 py-5 border-b border-gray-200 text-left text-gray-600 text-sm font-sans font-medium">Status</th>
                                 <th class="px-5 py-5 border-b border-gray-200 text-left text-gray-600 text-sm font-sans font-medium">Actions</th>
-                                <th class="px-5 py-5 border-b border-gray-200 text-left text-gray-600 text-sm font-sans font-medium bg-white sticky right-0">Settings</th>
+                                <th class="px-5 py-5 border-b border-gray-200 text-left text-gray-600 text-sm font-sans font-medium bg-white sticky right-0">
+                                  <div class="relative inline-block text-left">
+                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-blue-500 text-sm font-medium hover:bg-gray-50 transition-all focus:outline-none">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
+                                      </svg>
+                                    </button>
+                                  
+                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                        <div class="flex items-center">
+                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
+                                          </div>
+                                          <div class="flex items-center">
+                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
+                                          </div>
+                                        <!-- Add more options as needed -->
+                                      </div>
+                                    </div>
+                                  </div>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
+                                <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
+                                <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
+                                <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
                                         <div class="ml-2">
@@ -191,23 +298,23 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
+                                <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
+                                <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
                                     <div class="flex">
                                         <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
                                         <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
                                     </div>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
                                     <div class="flex">
                                         <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
                                     </div>
                                 </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
+                                <td class="flex px-5 py-3 bg-white text-sm">
                                     <button class="text-blue-600 hover:text-red-600 mx-2">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
@@ -215,66 +322,11 @@
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
+                                <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
+                                <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
+                                <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
                                         <div class="ml-2">
@@ -282,23 +334,23 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
+                                <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
+                                <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
+                                <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
                                     <!-- <div class="flex">
                                         <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md"></span>
                                         <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md"></span>
                                     </div> -->
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
                                     <div class="flex">
                                         <span class="text-red-500 bg-red-100 mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
                                     </div>
                                 </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
+                                <td class="flex px-5 py-3 bg-white text-sm">
                                     <button class="text-blue-600 hover:text-red-600 mx-2">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
@@ -306,517 +358,223 @@
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                     </button>
                                 </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
-                                        <div class="ml-2">
-                                            <p class="text-sm font-sans text-gray-600">Mohamed</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
-                                    <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
-                                        <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
-                                    <div class="flex">
-                                        <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
-                                    </div>
-                                </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
-                                    <button class="text-blue-600 hover:text-red-600 mx-2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <button class="text-gray-600 hover:text-gray-900 mx-2">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
+                              <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
+                              <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
+                              <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                                  <div class="flex items-center">
+                                      <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                      <div class="ml-2">
+                                          <p class="text-sm font-sans text-gray-600">Mohamed</p>
                                       </div>
-                                    </div>
                                   </div>
-                                  </td> 
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                  <div class="flex">
+                                      <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
+                                      <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
+                                  </div>
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                  <div class="flex">
+                                      <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
+                                  </div>
+                              </td>
+                              <td class="flex px-5 py-3 bg-white text-sm">
+                                  <button class="text-blue-600 hover:text-red-600 mx-2">
+                                      <i class="fa-solid fa-trash-can"></i>
+                                  </button>
+                                  <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                                  </button>
+                              </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
-                                        <div class="ml-2">
-                                            <p class="text-sm font-sans text-gray-600">Mohamed</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
-                                    <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
-                                        <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
-                                    <div class="flex">
-                                        <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
-                                    </div>
-                                </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
-                                    <button class="text-blue-600 hover:text-red-600 mx-2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <button class="text-gray-600 hover:text-gray-900 mx-2">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
+                              <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
+                              <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
+                              <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                                  <div class="flex items-center">
+                                      <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                      <div class="ml-2">
+                                          <p class="text-sm font-sans text-gray-600">Marwa</p>
                                       </div>
-                                    </div>
                                   </div>
-                                  </td>
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
+                              <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                  <!-- <div class="flex">
+                                      <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md"></span>
+                                      <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md"></span>
+                                  </div> -->
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                  <div class="flex">
+                                      <span class="text-red-500 bg-red-100 mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
+                                  </div>
+                              </td>
+                              <td class="flex px-5 py-3 bg-white text-sm">
+                                  <button class="text-blue-600 hover:text-red-600 mx-2">
+                                      <i class="fa-solid fa-trash-can"></i>
+                                  </button>
+                                  <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                                  </button>
+                              </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
-                                        <div class="ml-2">
-                                            <p class="text-sm font-sans text-gray-600">Marwa</p>
-                                        </div>
+                            <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
+                            <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
+                            <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                    <div class="ml-2">
+                                        <p class="text-sm font-sans text-gray-600">Mohamed</p>
                                     </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
-                                    <!-- <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md"></span>
-                                        <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md"></span>
-                                    </div> -->
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
-                                    <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
-                                    </div>
-                                </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
-                                    <button class="text-blue-600 hover:text-red-600 mx-2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <button class="text-gray-600 hover:text-gray-900 mx-2">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  </td>
+                                </div>
+                            </td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
+                            <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
+                            <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                <div class="flex">
+                                    <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
+                                    <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
+                                </div>
+                            </td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                <div class="flex">
+                                    <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
+                                </div>
+                            </td>
+                            <td class="flex px-5 py-3 bg-white text-sm">
+                                <button class="text-blue-600 hover:text-red-600 mx-2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                            </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
-                                        <div class="ml-2">
-                                            <p class="text-sm font-sans text-gray-600">Mohamed</p>
-                                        </div>
+                            <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
+                            <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
+                            <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                    <div class="ml-2">
+                                        <p class="text-sm font-sans text-gray-600">Marwa</p>
                                     </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
-                                    <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
-                                        <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
-                                    <div class="flex">
-                                        <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
-                                    </div>
-                                </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
-                                    <button class="text-blue-600 hover:text-red-600 mx-2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <button class="text-gray-600 hover:text-gray-900 mx-2">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
-                                      </div>
-                                    </div>
-                                  </div>
-                                  </td> 
+                                </div>
+                            </td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
+                            <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
+                            <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
+                            <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                <!-- <div class="flex">
+                                    <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md"></span>
+                                    <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md"></span>
+                                </div> -->
+                            </td>
+                            <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                <div class="flex">
+                                    <span class="text-red-500 bg-red-100 mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
+                                </div>
+                            </td>
+                            <td class="flex px-5 py-3 bg-white text-sm">
+                                <button class="text-blue-600 hover:text-red-600 mx-2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                            </td>
                             </tr>
                             <tr class="border-b">
-                                <td class="h-4 w-4 rounded pl-5 py-1 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
-                                <td class="px-3 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
-                                <td class="px-4 py-1 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
-                                        <div class="ml-2">
-                                            <p class="text-sm font-sans text-gray-600">Mohamed</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
-                                <td class="flex items-center px-5 py-1 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
-                                    <div class="flex">
-                                        <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
-                                        <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
-                                    <div class="flex">
-                                        <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
-                                    </div>
-                                </td>
-                                <td class="flex px-5 py-1 bg-white text-sm">
-                                    <button class="text-blue-600 hover:text-red-600 mx-2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <button class="text-gray-600 hover:text-gray-900 mx-2">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
-                                </td>
-                                <td class="px-5 py-1 border-b border-gray-200 text-sm text-base font-sans text-gray-600 bg-white sticky right-0 text-center">
-                                    <div class="relative inline-block text-left">
-                                    <button onclick="toggleDropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <path fill-rule="evenodd" d="M6 8a1 1 0 011 1v7a1 1 0 102 0V9a1 1 0 011-1h1a1 1 0 110 2H9v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h1z" clip-rule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  
-                                    <div id="dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
-                                      <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <div class="flex items-center">
-                                          <input id="Created" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Created" class="ml-2 block text-sm text-gray-700">Created</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                          <input id="Name" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                          <label for="Name" class="ml-2 block text-sm text-gray-700">Name</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input id="Email" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Email" class="ml-2 block text-sm text-gray-700">Email</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Phone" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Phone" class="ml-2 block text-sm text-gray-700">Phone</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Sources" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Sources" class="ml-2 block text-sm text-gray-700">Sources</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Gender" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Gender" class="ml-2 block text-sm text-gray-700">Gender</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Agent" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Agent" class="ml-2 block text-sm text-gray-700">Agent</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Reminder Calls" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Reminder Calls" class="ml-2 block text-sm text-gray-700">Reminder Calls</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Status" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Status" class="ml-2 block text-sm text-gray-700">Status</label>
-                                          </div>
-                                          <div class="flex items-center">
-                                            <input id="Actions" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                            <label for="Actions" class="ml-2 block text-sm text-gray-700">Actions</label>
-                                          </div>
-                                        <!-- Add more options as needed -->
-                                      </div>
-                                    </div>
+                          <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider"> <input type="checkbox"> </td>
+                          <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>18Agu2024</p></td>
+                          <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                              <div class="flex items-center">
+                                  <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                  <div class="ml-2">
+                                      <p class="text-sm font-sans text-gray-600">Mohamed</p>
                                   </div>
-                                  </td>
+                              </div>
+                          </td>
+                          <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">dvsns@gmail.com</p></td>
+                          <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+234564676</p></td>
+                          <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Facebook</p></td>
+                          <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Male</p></td>
+                          <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                          <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                              <div class="flex">
+                                  <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md">18Agu2024</span>
+                                  <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md">12:00AM</span>
+                              </div>
+                          </td>
+                          <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                              <div class="flex">
+                                  <span class="text-green-500 bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
+                              </div>
+                          </td>
+                          <td class="flex px-5 py-3 bg-white text-sm">
+                              <button class="text-blue-600 hover:text-red-600 mx-2">
+                                  <i class="fa-solid fa-trash-can"></i>
+                              </button>
+                              <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                              </button>
+                          </td>
                             </tr>
+                            <tr class="border-b">
+                              <td class="h-4 w-4 rounded pl-5 py-3 border-b border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"> <input type="checkbox"> </td>
+                              <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><p>28Sep2023</p></td>
+                              <td class="px-4 py-3 border-b border-gray-200 bg-white text-sm">
+                                  <div class="flex items-center">
+                                      <div class="flex-shrink-0 w-7 h-7"><img class="w-full h-full rounded-full" src="child.jpg" alt="Avatar"></div>
+                                      <div class="ml-2">
+                                          <p class="text-sm font-sans text-gray-600">Marwa</p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm"><p class="text-gray-600 whitespace-no-wrap text-sm font-sans">Marwa@gmail.com</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm font-sans text-gray-500"><i class="fa-solid fa-phone pr-2 text-blue-400"></i> <p>+11213144</p></td>
+                              <td class="px-3 py-3 border-b border-gray-200 bg-white text-sm text-blue-600 font-sans"><p>Google Ads</p></td>
+                              <td class="flex items-center px-5 py-3 border-gray-200 bg-white text-sm text-base font-sans text-gray-600"><i class="fa-solid fa-person text-blue-400 pr-2"></i> <p class="text-gray-900 whitespace-no-wrap">Female</p></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600"></td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans text-gray-600">
+                                  <!-- <div class="flex">
+                                      <span class="text-red-500 bg-red-100 mr-3 px-2 py-1 rounded-md"></span>
+                                      <span class="text-red-500 bg-red-100 px-2 py-1 rounded-md"></span>
+                                  </div> -->
+                              </td>
+                              <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm text-base font-sans   text-gray-500">
+                                  <div class="flex">
+                                      <span class="text-red-500 bg-red-100 mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
+                                  </div>
+                              </td>
+                              <td class="flex px-5 py-3 bg-white text-sm">
+                                  <button class="text-blue-600 hover:text-red-600 mx-2">
+                                      <i class="fa-solid fa-trash-can"></i>
+                                  </button>
+                                  <button class="text-gray-600 hover:text-gray-900 mx-2">
+                                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                                  </button>
+                              </td>
+                          </tr>
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
