@@ -23,15 +23,19 @@
           mono: ["ui-monospace", "monospace"],
         },
         colors: {
-        'leads': '#3b82f6',
-        'green': '#28c76f',
-        'red': '#ff4c51',
-        'red-light':'#ffebee',
-        'orange': '#ff9f43',
-        'orange-light':'#ffe0b2',
-        'white': '#fff',
-        'gray-100': '#f3f4f6', // gray-100
-        'gray-50': '#f9fafb', // gray-50
+        'leads': '#3b82f6', // blue
+        'follow-up': '#ffeb3b', // Yellow
+        'follow-light': '#fff9c4', // Yellow-L
+        'intersted': '#ff9f43', // orange
+        'intersted-light':'#fff3e0', // orange-L
+        'trail':'#675DD8', // purp
+        'trail-light':'#f8bbd0', // pink-L
+        'successful': '#28c76f', // green
+        'successful-light': '#c8e6c9', // green-L
+        'error': '#ff4c51', // red
+        'error-light':'#ffebee', // red-L
+        'not': '#737682', // dark gray
+        'no-answer': '#eeeeee', // light gray
       },
       },
       corePlugins: {
@@ -149,17 +153,17 @@
                     <div><button class="px-4 h-20 mr-12 border-2 hover:bg-leads hover:text-white transition-all text-black rounded text-sm font-sans">All 12345</button></div>
                     <div>
                       <div>                    
-                            <button class="w-32 h-9 my-2 transition-all bg-leads hover:bg-white hover:text-black rounded text-sm font-sans   text-white">New Leads 123</button>
-                            <button class="w-32 h-9 my-2 ml-6 transition-all bg-leads hover:bg-white hover:text-black text-white rounded text-sm font-sans ">Follow Up 1234</button>
-                            <button class="w-32 h-9 my-2 ml-6 transition-all bg-leads hover:bg-white hover:text-black text-white rounded text-sm font-sans ">Trials 12</button>
-                            <button class="w-32 h-9 my-2 ml-6 transition-all bg-leads hover:bg-white hover:text-black text-white rounded text-sm font-sans ">Suspended 1234</button>
-                            <button class="w-32 h-9 my-2 ml-44 bg-red text-white rounded text-sm font-sans ">Schedule Calls</button>
+                            <button class="w-32 h-9 my-2 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-leads mr-2 text-xs"></i>New Leads <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 my-2 ml-6 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-follow-up mr-2 text-xs"></i>Follow Up <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 my-2 ml-6 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-trail mr-2 text-xs"></i>Trials <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 my-2 ml-6 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-error mr-2 text-xs"></i>Suspended <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 my-2 ml-44 bg-error text-white rounded text-sm font-sans ">Schedule Calls</button>
                       </div>
                       <div>
-                            <button class="w-32 h-9 mb-1 transition-all bg-red text-white hover:bg-white hover:text-black rounded text-sm font-sans ">No Answer 1234</button>
-                            <button class="w-32 h-9 mb-1 ml-6 transition-all bg-red text-white hover:bg-white hover:text-black rounded text-sm font-sans ">Intersted 123</button>
-                            <button class="w-32 h-9 mb-1 ml-6 transition-all bg-red text-white hover:bg-white hover:text-black rounded text-sm font-sans ">Student 12345</button>
-                            <button class="w-32 h-9 mb-1 ml-6 transition-all bg-red text-white hover:bg-white hover:text-black rounded text-sm font-sans ">Not Intersted 1234</button>
+                            <button class="w-32 h-9 mb-1 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-no-answer mr-2 text-xs"></i>No Answer <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 mb-1 ml-6 transition-all rounded text-sm font-sans "><i class="fa-solid fa-circle text-intersted mr-2 text-xs"></i>Intersted <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 mb-1 ml-6 transition-all  rounded text-sm font-sans "><i class="fa-solid fa-circle text-successful mr-2 text-xs"></i>Student <span class="bg-gray-100">123</span></button>
+                            <button class="w-32 h-9 mb-1 ml-6 transition-all  rounded text-sm font-sans "><i class="fa-solid fa-circle text-not mr-2 text-xs"></i>Not Intersted <span class="bg-gray-100">123</span></button>
                             <button id="addLeadsBtn"  class="w-32 h-9 mb-1 ml-44 bg-leads text-white rounded text-sm font-sans">Add Leads</button>
                             <div id="leadsForm" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
                                 <div class="bg-white p-6 rounded-lg shadow-md w-6/12">
@@ -308,7 +312,7 @@
 
                                 <th class="sticky right-0 px-5 py-5 border-b border-gray-200 text-left text-gray-600 text-sm font-sans font-medium">
                                     <div>
-                                        <button onclick="toggledropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-blue text-xl font-medium hover:bg-gray-50 transition-all focus:outline-none"><i class="fa-solid fa-gear"></i></button>
+                                        <button onclick="toggledropdown()" class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-white text-leads text-xl font-medium hover:bg-gray-50 transition-all focus:outline-none"><i class="fa-solid fa-gear"></i></button>
                                         <div id="dropdown" class="hidden absolute right-10 w-40 bg-white shadow-lg rounded mt-2 p-4">
                                             <label><input type="checkbox" onchange="toggleColumn('created')" checked> Created</label><br>
                                             <label><input type="checkbox" onchange="toggleColumn('name')" checked> Name</label><br>
@@ -344,17 +348,17 @@
                                 <td class="agent px-5 py-3 border-b border-gray-200 bg-white text-sm font-sans text-gray-600"></td>
                                 <td class="reminder px-5 py-3 border-b border-gray-200 bg-white text-sm font-sans text-gray-600">
                                     <div class="flex">
-                                        <span class="text-red bg-red-light mr-3 px-2 py-1 rounded"><span class="mr-1">18</span><span class="mr-1">Agu</span>2024</span>
-                                        <span class="text-red bg-red-light px-2 py-1 rounded"><span class="mr-1">12:00</span>AM</span>
+                                        <span class="text-error bg-error-light mr-3 px-2 py-1 rounded"><span class="mr-1">18</span><span class="mr-1">Agu</span>2024</span>
+                                        <span class="text-error bg-error-light px-2 py-1 rounded"><span class="mr-1">12:00</span>AM</span>
                                     </div>
                                 </td>
                                 <td class="status px-5 py-3 border-b border-gray-200 bg-white text-sm font-sans   text-gray-500">
                                     <div class="flex">
-                                        <span class="text-green bg-green-100 mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
+                                        <span class="text-intersted bg-intersted-light mr-3 w-24 py-1 text-center rounded-md">Intersted</span>
                                     </div>
                                 </td>
                                 <td class="actions flex px-5 py-3 bg-white text-sm">
-                                    <button class="hover:text-red mx-2">
+                                    <button class="hover:text-error mx-2">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                     <button class="text-gray-600 hover:text-gray-900 mx-2">
@@ -386,11 +390,11 @@
                                 </td>
                                 <td class="status px-5 py-3 border-b border-gray-200 text-sm font-sans">
                                     <div class="flex">
-                                        <span class="text-red bg-red-light mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
+                                        <span class="text-error bg-error-light mr-3 w-24 py-1 text-center rounded-md">Suspended</span>
                                     </div>
                                 </td>
                                 <td class="actions flex px-5 py-3 bg-white text-sm">
-                                    <button class="hover:text-red mx-2">
+                                    <button class="hover:text-error mx-2">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                     <button class="text-gray-600 mx-2">
