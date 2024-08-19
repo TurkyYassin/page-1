@@ -59,6 +59,18 @@
                 background: #e2e2e2; /* Color of the thumb */
                 border-radius: 3px; /* Rounding the corners of the thumb */
             }
+
+            /*  */
+            .toggle-checkbox:checked {
+              @apply: right-0 border-blue-400;
+              right: 0;
+              border-color: #60A5FA;
+            }
+            .toggle-checkbox:checked + .toggle-label {
+              @apply: bg-blue-400;
+              background-color: #60A5FA;
+            }
+            
         </style>
 </head>
 
@@ -165,32 +177,95 @@
                             <button class="w-32 h-9 mb-1 ml-6 transition-all  rounded text-sm font-sans "><i class="fa-solid fa-circle text-successful mr-2 text-xs"></i>Student <span class="bg-gray-100">123</span></button>
                             <button class="w-32 h-9 mb-1 ml-6 transition-all  rounded text-sm font-sans "><i class="fa-solid fa-circle text-not mr-2 text-xs"></i>Not Intersted <span class="bg-gray-100">123</span></button>
                             <button id="addLeadsBtn"  class="w-32 h-9 mb-1 ml-44 bg-leads text-white rounded text-sm font-sans">Add Leads</button>
-                            <div id="leadsForm" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
-                                <div class="bg-white p-6 rounded-lg shadow-md w-6/12">
-                                    <h2 class="text-xl font-bold mb-4 text-gray-500 text-center">Add New Leads</h2>
+                            <div id="leadsForm" class="fixed inset-0 flex flex-wrap overflow-auto items-center justify-center bg-gray-900 bg-opacity-50 z-50 hidden">
+                                <div class="bg-white p-6 rounded-lg shadow-md w-5/12">
+                                    <h2 class="text-xl font-bold mb-2 text-gray-500 text-center">Add New Leads</h2>
+                                    <div class="flex mb-2">
+                                        <div class="flex mb-2">
+                                            <button class="bg-gray-200 text-black font-semibold py-1 px-4 rounded-l-lg">Parent Name</button>
+                                            <button class="bg-gray-200 text-black font-semibold py-1 px-4 rounded-r-lg">Member</button>
+                                        </div>
+                                        <div><button class="bg-leads text-sm text-white font-bold w-5 rounded-full mt-2 ml-2">+</button></div>
+                                    </div>
                                     <form>
-                                        <div class="grid grid-cols-2">
-                                            <div class="mb-4">
-                                                <label for="studentName" class="block text-gray-500">Full Name</label>
-                                                <input type="text" id="studentName" class="mt-1 block w-full border-gray-500 rounded-md shadow-sm focus:ring-blue focus:border-blue" required>
+                                        <div class="grid grid-cols-2 gap-4 pb-4 border-b">
+                                            <div>
+                                                <label class="block text-gray-700">Full Name *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter full name" required>
                                             </div>
-                                            <div class="mb-4">
-                                                <label for="studentName" class="block text-gray-500">Relation</label>
-                                                <input type="text" id="studentName" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue focus:border-blue" required>
+                                            <div>
+                                                <label class="block text-gray-700">Relation *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter relation"required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Phone *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter phone number"required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Email *</label>
+                                                <input type="email" class="w-full p-2 border rounded-lg" placeholder="Enter email"required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Country *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter country"required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Timezone *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter timezone"required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Gender *</label>
+                                                <select class="w-full p-2 border rounded-lg">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Age</label>
+                                                <input type="number" class="w-full p-2 border rounded-lg" placeholder="Enter age" required>
                                             </div>
                                         </div>
-
-                                        <div class="grid grid-cols-2">
-                                            <div class="mb-4">
-                                                <label for="studentEmail" class="block text-gray-500">Email</label>
-                                                <input type="email" id="studentEmail" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                            
+                                        <div class="mb-2 pt-2">
+                                            <label class="flex items-center text-gray-700"><input type="checkbox" class="mr-2">Student</label>
+                                        </div>
+                            
+                                        <div class="grid grid-cols-2 gap-4 mb-2">
+                                            <div>
+                                                <label class="block text-gray-700">Subject</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter subject">
                                             </div>
-                                            <div class="mb-4">
-                                                <label for="studentPhone" class="block text-gray-500">Mobile Number</label>
-                                                <input type="text" id="studentPhone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                                            <div>
+                                                <label class="block text-gray-700">Level</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter level">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Select Day</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter select day">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">Preferred Teacher *</label>
+                                                <input type="text" class="w-full p-2 border rounded-lg" placeholder="Enter preferred teacher">
                                             </div>
                                         </div>
-                                        <button type="submit" class="bg-blue text-white hover:bg-orange transition-all px-4 py-2 rounded-lg"><a href="#">Send</a></button>
+                            
+                                        <div class="grid grid-cols-4 gap-4 mb-2">
+                                            <div>
+                                                <label class="block text-gray-700">From</label>
+                                                <input type="time" class="w-full p-2 border rounded-lg">
+                                            </div>
+                                            <div>
+                                                <label class="block text-gray-700">To</label>
+                                                <input type="time" class="w-full p-2 border rounded-lg">
+                                            </div>
+                                            <button type="button" class="bg-leads text-white font-bold w-full h-9  px-4 rounded-md col-start-4">Add</button>
+                                        </div>
+                            
+                                        <div class="flex justify-between">
+                                            <button type="button" class="bg-gray-600 font-bold py-2 px-4 rounded-lg">close</button>
+                                            <button type="submit" class="bg-leads text-white font-bold py-2 px-4 rounded-lg">Submit</button>
+                                        </div>
                                     </form>
                                     <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
                                 </div>
